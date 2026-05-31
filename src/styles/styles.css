@@ -126,8 +126,7 @@ details[open] > summary::before {
 /* Limpando o CSS antigo do celular que não precisamos mais */
 @media (max-width: 768px) {
     .footer_pre {
-        font-size: 2.2vw;
+        font-size: 3.5vw; /* Deixe a fonte em um tamanho confortável */
         line-height: 1.4;
-        overflow-x: hidden;
     }
 }
