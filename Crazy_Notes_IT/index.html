@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <title>Crazy Notes IT - Console</title>
+
+</head>
+<body>
+
+<div class="terminal">
+    <!-- Cabeçalho do Console -->
+    <div>
+        <span class="prompt">guest@crazynotesit:~$</span> <span class="command">cat welcome.txt</span>
+            <div class="logo-container">
+                <img src="./src/assets/logo.png" alt="Crazy Notes IT Logo" class="terminal-logo">
+            </div>
+        <p class="comment"># Logs técnicos, automações de suporte e writeups de Cyber Security.</p>
+    </div>
+
+    <!-- Seção Posts/Artigos -->
+    <div>
+        <p class="prompt">guest@crazynotesit:~$ <span class="command">ls -la ./posts/</span></p>
+        <ul class="post-list">
+            <!-- Modelo de post do próprio site (Markdown/HTML futuro) -->
+            <li class="post-item">
+                <span class="post-date">2026-05-27</span>
+                <a href="./src/posts/artigo01.html" class="link">[POST] Por quê o Crazy_Notes_IT foi criado </a>
+            </li>
+            
+            <!-- Modelo de post que joga para o Medium 
+            
+            <li class="post-item">
+                <span class="post-date">2026-05-20</span>
+                <a href="https://medium.com" target="_blank" class="link">[MEDIUM] Resolução da Sala Starter - TryHackMe</a>
+            </li>
+
+            -->
+
+        </ul>
+    </div>
+
+    <!-- Seção de Ferramentas (Árvore de Pastas) -->
+    <div>
+        <p class="prompt">guest@crazynotesit:~$ <span class="command">tree ./projects/</span></p>
+        
+        <div class="tree-container">
+
+            <!--MODELOS SUBPASTAS
+                 Subpasta: Tool 1
+                <details>
+                    <summary>script-backup-windows</summary>
+                    <div class="tool-content">
+                        <p><strong>Descrição:</strong> Automação em PowerShell para backup rotativo de servidores locais.</p>
+                        <p><strong>Status:</strong> Produtividade / Ativo</p>
+                        <a href="https://github.com" target="_blank" class="link">» [Ver código fonte no GitHub]</a>
+                    </div>
+                </details>
+            -->
+
+            
+            <!-- PASTA PAI -->
+            <details>
+                <summary>Infrastructure as Code & Automation/</summary>
+                
+                <!-- Subpasta: Tool 1 -->
+                <details>
+                    <summary>Suporte-Windows</summary>
+                    <div class="tool-content">
+                        <p><strong>Descrição:</strong> Automação em PowerShell para suporte geral do windows, sendo ideal para pode resoluções de problmeas do sistesma, fazer inventario e muito mais.</p>
+                        <p><strong>Status:</strong> Produtividade / Ativo</p>
+                        <a href="https://github.com" target="_blank" class="link">» [Ver código fonte no GitHub]</a>
+                    </div>
+                </details>
+            </details>
+
+            <!-- PASTA PAI -->
+            <details>
+                <summary>Cybersecurity/</summary>
+                
+                <!-- Subpasta: Tool 1 -->
+                <details>
+                    <summary>scanner-portas-python</summary>
+                    <div class="tool-content">
+                        <p><strong>Descrição:</strong> Script customizado de Port Scanning focado em redes internas corporativas.</p>
+                        <a href="https://github.com" target="_blank" class="link">» [Ver código fonte no GitHub]</a>
+                    </div>
+                </details>
+            </details>
+
+        </div>
+    </div>
+
+    <!-- Botão Direto para o Perfil do GitHub -->
+    <a href="https://github.com" target="_blank" class="github-btn">
+        _ Acessar GitHub Oficial
+    </a>
+
+    <!--Seção de aviso-->
+    <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+        <span class="prompt">guest@crazynotesit:~$</span> <span class="command">Crazy_Notes_IT  --help</span>
+        <div class="logo-container">
+            <img src="logo.png" alt="Crazy Notes IT Logo" class="terminal-logo">
+        </div>
+        
+        <div style="border: 1px dashed #ff3333; padding: 15px; margin: 20px 0; background-color: rgba(255, 51, 51, 0.05);">
+            <span style="color: #ff3333; font-weight: bold;">⚠️ [ AVISO LEGAL / DISCLAIMER ]</span>
+            <p style="color: #e0e0e0; margin: 5px 0 0 0; font-size: 0.9em; line-height: 1.5;">
+                Todo o conteúdo, scripts e writeups presentes aqui possuem finalidade exclusivamente educacional e de pesquisa. 
+                Nenhuma técnica documentada deve ser utilizada em ambientes sem autorização explícita. 
+                O uso indevido dessas informações em sistemas de terceiros é de total responsabilidade do usuário.
+            </p>
+        </div>
+    </div>
+
+    <!-- Rodapé: Informações do Autor e Redes (Estilo Terminal) -->
+    <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+        <p class="prompt">guest@crazynotesit:~$ <span class="command">whoami --contact</span></p>
+        <pre style="color: #888;">
+[ AUTOR ]--------------------------------------------------
+» Nome: Perez9872
+» Foco: Facilitar a vida e cybersegurança
+» Status: Desenvolvendo ferramentas e documentando labs.
+
+[ REDES E CONTATO ]----------------------------------------
+» LinkedIn: <a href="https://www.linkedin.com/in/murilo-perez" target="_blank" class="link">://www.linkedin.com/in/murilo-perez</a>
+» Medium:   <a href="https://medium.com" target="_blank" class="link">:Em desenvolvimento</a>
+<!-- » Email:    <a href="mailto:seu-email@provedor.com" class="link">seu-email@provedor.com</a> -->
+-----------------------------------------------------------</pre>
+        <p class="comment" style="font-size: 0.85em;"># Sinta-se livre para se conectar e trocar ideias sobre projetos e palestras.</p>
+    </div>
+
+        <!-- Linha final com cursor piscando -->
+    <div style="margin-top: 25px;">
+        <span class="prompt">guest@crazynotesit:~$</span><span class="cursor"></span>
+    </div>
+
+</div>
+
+
+</body>
+</html>

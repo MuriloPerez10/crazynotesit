@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/post.css">
+    <title>Crazy Notes IT - Post</title>
+
+</head>
+<body>
+
+<div class="terminal">
+    <div>
+        <span class="prompt">guest@crazynotesit:~$</span> <span class="command">cat ./posts/artigo_01.txt</span>
+    </div>
+
+    <!-- LOCAL DO CONTEUDO -->
+    <div id="post-content"></div><span class="cursor" id="terminal-cursor"></span>
+
+    <!-- RETORNO-->
+    <div id="back-link" style="margin-top: 40px; display: none;">
+        <p><a href="../../index.html" class="link">« [cd ..] Voltar para o Menu Principal</a></p>
+    </div>
+</div>
+
+<script>
+    const textoDoPost = `
+============================================================
+POR QUE O CRAZY NOTES IT FOI CRIADO?
+============================================================
+Data: 31 de Maio de 2026
+Categoria: Infraestrutura / Portfólio
+
+Seja bem-vindo e bem-vinda! Espero que esteja tudo bem com você. 
+Fico muito feliz que tenha entrado para conhecer esse projeto, 
+o Crazy Notes IT.
+
+O grande intuito desse espaço é ajudar a comunidade com anotações 
+rápidas, diretas e resumidas dos estudos que vou fazendo e de tudo 
+o que vou testando no meu Homelab. O foco aqui é trazer o que 
+realmente dá certo na prática, para que funcione aí na sua máquina 
+também — chega de desculpas de "na minha máquina funciona"!
+
+A partir de hoje, vou documentar aqui meus scripts de automação de 
+suporte, ferramentas de segurança e análises de salas do 
+TryHackMe e Hack The Box.
+
+Vou soltar posts por aqui e também artigos mais aprofundados lá 
+no Medium, mas pode deixar que sempre vou deixar os links por aqui 
+para facilitar a sua navegação.
+
+Sinta-se em casa para explorar as pastas e os códigos no menu principal, 
+e se quiser trocar uma ideia, é só me dar um grito nos contatos abaixo!
+
+------------------------------------------------------------
+# EOF (End of File)
+`;
+
+    // EFEITO DE DIGITAÇÃO
+    let index = 0;
+    const velocidade = 0.5; // Velocidade em milissegundos por caractere (menor = mais rápido)
+    const container = document.getElementById("post-content");
+    const backLink = document.getElementById("back-link");
+
+    function digitarTexto() {
+        if (index < textoDoPost.length) {
+            container.textContent += textoDoPost.charAt(index);
+            index++;
+            // Faz o scroll automático para baixo se o texto for muito longo
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(digitarTexto, velocidade);
+        } else {
+            // Quando a digitação termina, mostra o botão de voltar
+            backLink.style.display = "block";
+        }
+    }
+
+    // INICIA A DIGITAÇÃO
+    window.onload = digitarTexto;
+</script>
+
+</body>
+</html>

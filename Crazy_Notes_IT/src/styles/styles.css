@@ -1,0 +1,133 @@
+
+/* Estilo Geral do Terminal */
+body {
+    background-color: #0d0d0d;
+    color: #00ff66; /* Verde terminal clássico */
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.terminal {
+    max-width: 950px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Cores de Destaque */
+.prompt { color: #00ccff; }
+.command { color: #ffffff; }
+.comment { color: #666666; }
+.link { color: #ffcc00; text-decoration: none; }
+.link:hover { text-shadow: 0 0 5px #ffcc00; text-decoration: underline; }
+
+/* Estilização dos Posts (Lista Simples) */
+.post-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+}
+.post-item {
+    margin-bottom: 10px;
+}
+.post-date { color: #888; margin-right: 15px; }
+
+/* Estilização da Árvore de Pastas Interativa */
+.tree-container {
+    margin-top: 25px;
+    background: #111;
+    padding: 15px;
+    border-left: 3px solid #00ff66;
+}
+
+details {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none; /* Esconde a seta padrão */
+    outline: none;
+    user-select: none;
+    font-weight: bold;
+}
+
+/* Remove a seta nativa no Firefox e Safari */
+summary::-webkit-details-marker { display: none; }
+
+/* Customização dos ícones ao abrir/fechar */
+details > summary::before {
+    content: "📁 ";
+}
+details[open] > summary::before {
+    content: "📂 ";
+}
+
+/* Estilo interno quando a pasta da ferramenta abre */
+.tool-content {
+    margin-left: 25px;
+    padding: 10px;
+    border-left: 1px dashed #444;
+    color: #dddddd;
+}
+
+.github-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 15px;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    text-decoration: none;
+    font-weight: bold;
+}
+.github-btn:hover {
+    background-color: #00ff66;
+    color: #000;
+}
+
+/* Animação do Cursor Piscando */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background-color: #00ff66; /* Mesma cor do texto do terminal */
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    from, to { background-color: transparent }
+    50% { background-color: #00ff66; }
+}
+
+/* Estilização da Logo em Imagem */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza a logo no terminal */
+    margin: 20px 0;
+}
+
+.terminal-logo {
+    max-width: 100%;    /* Impede que a imagem passe do limite do terminal */
+    height: auto;       /* Mantém a proporção original da imagem */
+    display: block;
+    /* Opcional: Se sua imagem tiver fundo transparente e você quiser dar um brilho verde estilo hacker: */
+    /* filter: drop-shadow(0 0 5px #00ff66); */
+}
+
+/* Limpando o CSS antigo do celular que não precisamos mais */
+@media (max-width: 768px) {
+    .footer_pre {
+        font-size: 2.2vw;
+        line-height: 1.4;
+        overflow-x: hidden;
+    }
+}

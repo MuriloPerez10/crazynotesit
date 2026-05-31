@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/post.css">
+    <title>Crazy Notes IT - Post</title>
+
+</head>
+<body>
+
+<div class="terminal">
+    <!-- Linha de Comando Simulando a Abertura -->
+    <div>
+        <span class="prompt">guest@crazynotesit:~$</span> <span class="command">cat ./posts/artigo_01.txt</span>
+    </div>
+
+    <!-- O Conteúdo do Post começará vazio e o JavaScript vai preencher -->
+    <div id="post-content"></div><span class="cursor" id="terminal-cursor"></span>
+
+    <!-- Linha de retorno ao menu principal -->
+    <div id="back-link" style="margin-top: 40px; display: none;">
+        <p><a href="../index.html" class="link">« [cd ..] Voltar para o Menu Principal</a></p>
+    </div>
+</div>
+
+<script>
+    // 📝 TEXTO DO SEU POST (Escreva seu artigo aqui dentro)
+    const textoDoPost = `===========================================================
+COMO CONFIGUREI ESTE LABORATÓRIO DIGITAL MINIMALISTA
+===========================================================
+Data: 27 de Maio de 2026
+Categoria: Infraestrutura / Portfólio
+
+Seja bem-vindo ao meu caderno de estudos técnico. Decidi criar este
+espaço no estilo console pelas seguintes razões:
+
+1. Foco no Conteúdo Técnico: Sem distrações visuais ou fotos.
+2. Identidade: Conversa direto com a comunidade de TI e Sec.
+3. Leveza: O site carrega instantaneamente em qualquer lugar.
+
+A partir de hoje, documentarei aqui meus scripts de automação de 
+suporte, ferramentas de segurança e análises de salas do 
+TryHackMe e Hack The Box.
+
+Fique à vontade para explorar os códigos no menu principal.
+EOF`;
+
+    // ⚙️ LÓGICA DO EFEITO DE DIGITAÇÃO
+    let index = 0;
+    const velocidade = 0.5; // Velocidade em milissegundos por caractere (menor = mais rápido)
+    const container = document.getElementById("post-content");
+    const backLink = document.getElementById("back-link");
+
+    function digitarTexto() {
+        if (index < textoDoPost.length) {
+            container.textContent += textoDoPost.charAt(index);
+            index++;
+            // Faz o scroll automático para baixo se o texto for muito longo
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(digitarTexto, velocidade);
+        } else {
+            // Quando a digitação termina, mostra o botão de voltar
+            backLink.style.display = "block";
+        }
+    }
+
+    // Inicia a digitação assim que a página carrega
+    window.onload = digitarTexto;
+</script>
+
+</body>
+</html>
